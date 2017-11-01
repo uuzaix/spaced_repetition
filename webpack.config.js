@@ -4,9 +4,9 @@ var webpack = require('webpack')
 module.exports = {
   entry: './src/index.ts',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    path: path.resolve(__dirname, './build'),
+    publicPath: '/build/',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
