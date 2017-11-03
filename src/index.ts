@@ -4,10 +4,18 @@ let v = new Vue({
   el: "#app",
   template: `
     <div>
-        <div>Hello {{name}}!</div>
-        Name: <input v-model="name" type="text">
+        <div>{{cards[lastId]}}</div>
+        <button v-on:click="increaseId">Next</button>
     </div>`,
   data: {
-    name: "World"
+    cards: ["0", "1", "2", "3"],
+    lastId: 0,
+  },
+  methods: {
+    increaseId () {
+      this.lastId = this.lastId + 1 >= this.cards.length
+        ? 0
+        : this.lastId + 1
+    }
   }
 });
